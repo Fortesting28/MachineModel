@@ -2,4 +2,8 @@ services:
   - type: web
     name: ollama-ai
     plan: free
-    dockerfilePath: Dockerfile  # Point to your Dockerfile
+    dockerfilePath: Dockerfile
+    envVars:
+      - key: OLLAMA_HOST
+        value: "0.0.0.0"
+    port: 11434
