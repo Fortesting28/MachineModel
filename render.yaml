@@ -1,9 +1,11 @@
 services:
   - type: web
-    name: ollama-server
-    runtime: docker
-    dockerfilePath: Dockerfile
-    plan: free
+    name: ollama-ai
+    plan: free  # Or "starter" for $7/month (1GB RAM)
+    env: docker
+    dockerfilePath: Dockerfile  # Render will auto-generate this
     envVars:
       - key: OLLAMA_HOST
         value: "0.0.0.0"
+      - key: PORT
+        value: "11434"  # Ollama's default port
