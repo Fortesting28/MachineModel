@@ -1,5 +1,4 @@
 #!/bin/bash
-curl -fsSL https://ollama.com/install.sh | sh
 ollama serve &
 sleep 10
 ollama pull starcoder:1b
