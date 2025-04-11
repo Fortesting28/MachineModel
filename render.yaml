@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: ollama-server
+    runtime: docker
+    dockerfilePath: Dockerfile
+    plan: free
+    envVars:
+      - key: OLLAMA_HOST
+        value: "0.0.0.0"
