@@ -1,9 +1,12 @@
 services:
   - type: web
     name: ollama-ai
-    plan: free
+    plan: starter  # REQUIRED for Ollama ($7/month)
     dockerfilePath: Dockerfile
     envVars:
       - key: OLLAMA_HOST
         value: "0.0.0.0"
+      - key: OLLAMA_MAX_MEMORY 
+        value: "400M"
+    healthCheckPath: /api/tags
     port: 11434
